@@ -1,0 +1,31 @@
+<div  *ngIf="this.toDos.length==0" class="container">
+  <div class="row">
+    <div class="col col-md-6">
+      <h2 style="margin-top: 50px;">Archive is Empty</h2>
+    </div>
+  </div>
+</div>
+ <div *ngIf="this.toDos.length>0">
+ <div class="myform" *ngFor="let todo of this.toDos;let i = index">
+     <div class="container">
+         <div class="row">
+         
+           <h3>{{i+1}}-{{todo.task}}</h3><br>
+         </div>
+         <div class="row" style="margin-left: 5px;">
+          <div class="col col-md-6">
+           <h6>Start Date:- <span>{{todo.start_date}}</span></h6>
+         
+         
+           <h6 >Deadline:-<span>{{todo.deadline_date}}</span></h6>
+         
+         
+           <h6>Label:- <span>{{todo.label}}</span></h6>
+         
+         
+           <h6>Status:-<span style="background: green; ">{{todo.status}}</span></h6>
+         </div>
+         </div>
+     </div>
+ </div>
+ </div>

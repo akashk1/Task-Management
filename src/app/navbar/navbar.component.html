@@ -1,0 +1,27 @@
+<nav class="navbar navbar-expand-md navbar-dark bg-dark">
+  <a class="navbar-brand" [routerLink] = "['signin']">Task-Management</a>
+  <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+    <span class="navbar-toggler-icon"></span>
+</button>
+  <div class="collapse navbar-collapse" id="navbarCollapse">
+    <div class="navbar-nav">
+     
+        <a class="nav-link nav-item" *ngIf = "!isLoggedin()" [routerLink]="['signup']">Sign-Up</a>
+      
+     
+        <a class="nav-link nav-item" *ngIf = "!isLoggedin()" [routerLink] = "['signin']">Sign-in</a>
+     
+     
+        <a class="nav-link nav-item" *ngIf = "isLoggedin()" [routerLink] = "['list']">Task List</a>
+      
+        <a class="nav-link nav-item" *ngIf = "isLoggedin()"  [routerLink]="['logout']">logout</a>
+      
+        <a class="nav-link nav-item" *ngIf = "isLoggedin()"  [routerLink]="['archive']">Your Archive</a>
+     </div>
+  </div>
+    <div>
+    <span *ngIf = "isLoggedin()" class="navbar-text">
+      Welcome:- {{name | uppercase}}
+    </span>
+  </div>
+</nav>

@@ -1,0 +1,85 @@
+
+<div class="modal-header">
+  
+  <button type="button" class="close" aria-label="Close"
+   (click)="activeModal.dismiss('Cross click')">
+  </button>
+</div>
+<div class="modal-body">
+ <div class="container">
+        <div class="row">
+          <div class="col mx-auto">
+              <div class="myform">
+                <div class="logo mb-3">
+                  <div class="col-md-12 text-center">
+                   <h1>Add Task</h1>
+                  </div>
+               </div>
+              <form id="formData" (ngSubmit)="onSubmit(f.value)" #f="ngForm" ngNativeValidate>
+
+    <div class="form-group">
+      <label for="task-detail">Task</label>
+      <input type="text" [(ngModel)]="this.task" name="task-detail" id="task-detail"
+      class="form-control"
+      ngModel required>
+    </div>
+    <div class="form-group">
+        <label for="email">Start Date</label>
+        <input type="date" name="start-date" [ngModel] ="  this.start_date | date:'yyyy-MM-dd' " (ngModelChange)="this.start_date = $event" id="start-date" class="form-control" ngModel required>
+       
+      </div>
+      <div class="form-group">
+          <label for="deadline-date">Deadline Date</label>
+          <input type="date" name="deadline-date" [ngModel] ="  this.deadline_date | date:'yyyy-MM-dd' " (ngModelChange)="this.deadline_date = $event" id="deadline-date"
+           class="form-control"
+           ngModel required="true">
+        </div>
+        <div class="form-group">
+          <label for="password">Label</label>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample1" value="Personal" name="label" ngModel required [(ngModel)]="this.label">
+  <label class="custom-control-label" for="defaultGroupExample1">Personal</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample2" value="Work" name="label"  ngModel required checked  [(ngModel)]="this.label">
+  <label class="custom-control-label" for="defaultGroupExample2">Work</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample3" value="Shopping" name="label" ngModel required  [(ngModel)]="this.label">
+  <label class="custom-control-label" for="defaultGroupExample3">Shopping</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample4" value="Others" name="label" ngModel required  [(ngModel)]="this.label">
+  <label class="custom-control-label" for="defaultGroupExample4">Others</label>
+</div>
+          
+        </div>
+        <div class="form-group">
+          <label for="password">Status</label>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample5" value="New" name="status" ngModel required checked [(ngModel)]="this.status"> 
+  <label class="custom-control-label" for="defaultGroupExample5">New</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample6" value="In Progress" name="status"  ngModel required [(ngModel)]="this.status">
+  <label class="custom-control-label" for="defaultGroupExample6">In Progress</label>
+</div>
+<div class="custom-control custom-radio">
+  <input type="radio" class="custom-control-input" id="defaultGroupExample7" value="Completed" name="status" ngModel required [(ngModel)]="this.status">
+  <label class="custom-control-label" for="defaultGroupExample7">Completed</label>
+</div>
+          
+        </div>
+        
+          <button class=" btn btn-block mybtn btn-primary tx-tfm">Save</button>
+    </form>
+              </div>
+ </div>
+ </div>
+ </div>
+</div>
+<div class="modal-footer">
+  <button class="btn btn-primary" (click)="activeModal.dismiss('Close clicked')">
+    Cancel
+  </button>
+</div>
